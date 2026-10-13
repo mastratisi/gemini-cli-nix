@@ -32,7 +32,7 @@ jobs:
         if: steps.diff.outputs.changed == 'true'
         run: |
           nix build --print-build-logs
-          test "$(./result/bin/agy --version)" = "${{ steps.diff.outputs.version }}"
+          test "$(./result/bin/gemini --version)" = "${{ steps.diff.outputs.version }}"
 
       - name: Commit
         if: steps.diff.outputs.changed == 'true'
